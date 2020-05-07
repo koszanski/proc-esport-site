@@ -1,5 +1,5 @@
 body {
-    background: #eeeeee
+    background: grey
 }
 .login-container
 {
@@ -25,6 +25,6 @@ body {
     margin: 0 auto;
     background-color: red;
     padding: 15px 40px 50px;
-    border: 2px solid grey;
+    border: 2px solid black;
     border-radius: 10px;
 }
