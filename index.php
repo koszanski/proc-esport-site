@@ -2,12 +2,12 @@
 <html>
 
 	<head>
-		<?php include ("includes.php"); ?>
+		<?php include ("includes/includes.php"); ?>
 	</head>
 
 	<body>
 	<div class="login-container">
-		<form class="login-form">
+		<form class="login-form" action="" method="post">
 			<img src="images/logo.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
 			<input type="text" class="form-control" name="username" placeholder="Username" required="">
 			<input type="password" class="form-control" name="password" placeholder="Password" required="">
