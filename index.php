@@ -13,7 +13,7 @@
 			<input type="password" class="form-control" name="password" placeholder="Password" required="">
 
 			<a href="adminlogin.php">Admin Login</a>
-			<button class="btn btn-lg btn-primary btn-block">Login</button>
+			<button type="submit" class="btn btn-lg btn-primary btn-block" name="login-submit">Login</button>
 			</div>
 		</form>
 
