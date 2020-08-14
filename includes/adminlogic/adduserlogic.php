@@ -40,19 +40,27 @@ if (isset($_POST['admin-adduser-submit'])) {
                 $sql = "INSERT INTO user (userLogin, userPass, userName) VALUES (?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_repare($stmt, $sql)) {
-                    header("Location: ../adminpanel.php?errror=sqlerror");
+                    header("Location: ../adminpanel.php?error=sqlerror");
                     exit();
                 }
                 else {
-                    
+                    mysqli_stmt_bind_param($stmt, "sss", $user, $pass, $name);
+                    mysqli_stmt_execute($stmt);
+                    header("Location: ../adminpanel.php?adduser=complete");
+                    exit();
                 }
 
             }
         }
+
     }
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+}
+else {
+    header("Location: ../index.php");
+    exit();
 
 }
-
-
 
 ?>
