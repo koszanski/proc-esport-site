@@ -15,17 +15,17 @@ session_start();
 		<?php
 
 			if (isset($_GET['error'])) {
-				if ($_GET['error'] == "emptyfields"){
-					echo '<div class="alert alert-danger" role="alert"> Some fields are not filled! </div>';
-				}
-				else if($_GET['error'] == "sqlerror"){
+				if($_GET['error'] == "sqlerror"){
 					echo '<div class="alert alert-danger" role="alert"> SQL error has occured! </div>';
 				}
 				else if($_GET['error'] == "wrongpass"){
 					echo '<div class="alert alert-danger" role="alert"> Password mismatch, try again! </div>';
 				}
+				else if($_GET['error'] == "usernotfound"){
+					echo '<div class="alert alert-danger" role="alert"> Username not found! </div>';
+				}
 			}
-			
+
 
 			if (isset($_SESSION['activeLogin'])) {
 				echo '<div class="alert alert-success" role="alert"> You are logged in! </div>';
