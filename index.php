@@ -13,13 +13,27 @@ session_start();
 	<body>
 	<div class="login-container">
 		<?php
+
+			if (isset($_GET['error'])) {
+				if ($_GET['error'] == "emptyfields"){
+					echo '<div class="alert alert-danger" role="alert"> Some fields are not filled! </div>';
+				}
+				else if($_GET['error'] == "sqlerror"){
+					echo '<div class="alert alert-danger" role="alert"> SQL error has occured! </div>';
+				}
+				else if($_GET['error'] == "wrongpass"){
+					echo '<div class="alert alert-danger" role="alert"> Password mismatch, try again! </div>';
+				}
+			}
+			
+
 			if (isset($_SESSION['activeLogin'])) {
 				echo '<div class="alert alert-success" role="alert"> You are logged in! </div>';
 			}
 			else {
 				echo '<div class="alert alert-danger" role="alert"> You are logged out! </div>';
 			}
-
+			
 
 		?>
 		<form class="login-form" action="includes/loginlogic.php" method="post">
