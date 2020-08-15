@@ -25,8 +25,7 @@ if (isset($_POST['login-submit'])) {
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             if ($row = mysqli_fetch_assoc($result)) {
-                $passcheck = password_verify($pass, $row['userPass']);
-                if ($passcheck == true) {
+                if ($pass == $row['userPass']) {
                     session_start();
                     $_SESSION['activeLogin'] = $row['userLogin'];
                     $_SESSION['activeID'] = $row['userID'];
@@ -35,11 +34,12 @@ if (isset($_POST['login-submit'])) {
                     exit();
                     
                 }
-                else if($passcheck == false)
+                else if($pass == $row['userPass'])
                 {
                     header("Location: ../index.php?error=wrongpass");
                     exit();
                 }
+
             }
             else {
                 header("Location: ../index.php?error=usernotfound");
