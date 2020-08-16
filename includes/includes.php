@@ -3,3 +3,4 @@
 <link rel="stylesheet" href="stylesheet.css"></link>
 <script src ="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/cjs/popper-lite.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
