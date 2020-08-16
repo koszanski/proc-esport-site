@@ -15,7 +15,7 @@
 		<?php
 			if($_GET['login'] == "successful")
 			{
-			echo '<div class="alert alert-success" role="alert"> Login successful! </div>';
+			echo '<div class="alert alert-success" role="alert"> Player login successful! </div>';
 			}
 		?>
 
