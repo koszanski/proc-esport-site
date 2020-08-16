@@ -13,9 +13,14 @@
 	<body>
 
 		<?php
-			if($_GET['login'] == "successful")
+			if($_GET['coachlogin'] == "successful")
 			{
 			echo '<div class="alert alert-success" role="alert"> Coach login successful! </div>';
+			}
+
+			if (!isset($_SESSION['activeCoachLogin'])) {
+				header("Location: ../index.php");
+    			exit();
 			}
 		?>
 

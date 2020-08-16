@@ -13,9 +13,14 @@
 	<body>
 
 		<?php
-			if($_GET['login'] == "successful")
+			if($_GET['playerlogin'] == "successful")
 			{
 			echo '<div class="alert alert-success" role="alert"> Player login successful! </div>';
+			}
+
+			if (!isset($_SESSION['activePlayerLogin'])) {
+				header("Location: ../index.php");
+    			exit();
 			}
 		?>
 
