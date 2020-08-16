@@ -21,13 +21,10 @@
 					echo '<div class="alert alert-danger" role="alert"> Password mismatch, try again! </div>';
 				}
 				else if($_GET['error'] == "usernotfound"){
-					echo '<div class="alert alert-danger" role="alert"> Username not found! </div>';
+					echo '<div class="alert alert-danger" role="alert"> Username not found or unassigned to team, contact admin. </div>';
 				}
 				else if($_GET['error'] == "adminnotfound"){
 					echo '<div class="alert alert-danger" role="alert"> Administrator username not found! </div>';
-				}
-				else if ($_GET['error'] == "unassigned"){
-					echo '<div class="alert alert-danger" role="alert"> Credentials match, but not assigned to team, contact database admin. </div>';
 				}
 			}
 
@@ -38,8 +35,9 @@
 			<input type="text" class="form-control" name="username" placeholder="Username" required="">
 			<input type="password" class="form-control" name="password" placeholder="Password" required="">
 
-			<button type="submit" class="btn btn-lg btn-primary btn-block" name="login-submit">Login</button>
-			<button type="submit" class="btn btn-lg btn-danger btn-block" name="adminlogin-submit">Admin Login</button>
+			<button type="submit" class="btn btn-lg btn-primary btn-block" name="player-login-submit">Player Login</button>
+			<button type="submit" class="btn btn-lg btn-primary btn-block" name="coach-login-submit">Coach Login</button>
+			<button type="submit" class="btn btn-lg btn-danger btn-block" name="admin-login-submit">Admin Login</button>
 			</div>
 		</form>
 
