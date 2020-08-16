@@ -1,12 +1,111 @@
 <?php 
-if (isset($_POST['login-submit'])) {
+if (isset($_POST['player-login-submit'])) {
 
     require 'dbconfig.php';
 
     $user = $_POST['username'];
     $pass = $_POST['password']; 
 
-    $sql = "SELECT * FROM user WHERE userLogin=?";
+    $sql = "SELECT user.userID, user.userLogin, user.userPass, user.userName, team_players.teamID FROM user INNER JOIN team_players ON user.userID=team_players.teamPlayerID WHERE userLogin=?";
+    //inner join join onto player table
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("Location: ../index.php?error=sqlerror");
+        exit();
+    }
+    else {
+        mysqli_stmt_bind_param($stmt, "s", $user);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        if ($row = mysqli_fetch_assoc($result)) {
+            if ($pass == $row['userPass']) {
+                session_start();
+                $_SESSION['activeLogin'] = $row['userLogin'];
+                $_SESSION['activeID'] = $row['userID'];
+                $_SESSION['activeFullname'] = $row['userName'];
+                $_SESSION['activeTeam'] = $row['teamID']; 
+                header("Location: ../player/playerlanding.php?login=successful");
+                exit();
+                }              
+            }
+            else if($user != $row['userLogin'])
+            {
+                header("Location: ../index.php?error=usernotfound");
+                exit();
+            }
+
+            else if($pass != $row['userPass'])
+            {
+                header("Location: ../index.php?error=wrongpass");
+                exit();
+            }
+
+    
+    }
+
+
+}
+
+else if (isset($_POST['coach-login-submit'])){
+
+    require 'dbconfig.php';
+
+    $user = $_POST['username'];
+    $pass = $_POST['password']; 
+
+    $sql = "SELECT user.userID, user.userLogin, user.userPass, user.userName, team_coaches.teamID FROM user INNER JOIN team_coaches ON user.userID=team_coaches.teamCoachID WHERE userLogin=?";
+    //inner join onto coach table
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("Location: ../index.php?error=sqlerror");
+        exit();
+    }
+    else {
+        mysqli_stmt_bind_param($stmt, "s", $user);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        if ($row = mysqli_fetch_assoc($result)) {
+            if ($pass == $row['userPass']) {
+                session_start();
+                $_SESSION['activeLogin'] = $row['userLogin'];
+                $_SESSION['activeID'] = $row['userID'];
+                $_SESSION['activeFullname'] = $row['userName'];
+                $_SESSION['activeTeam'] = $row['teamID']; 
+                header("Location: ../coach/coachlanding.php?login=successful");
+                exit();
+
+                }              
+            }
+            else if($user != $row['userLogin'])
+            {
+                header("Location: ../index.php?error=usernotfound");
+                exit();
+            }
+
+            else if($pass != $row['userPass'])
+            {
+                header("Location: ../index.php?error=wrongpass");
+                exit();
+            }
+
+    
+    }
+
+
+}
+
+
+
+else if (isset($_POST['admin-login-submit'])){
+
+    require 'dbconfig.php';
+
+    $user = $_POST['username'];
+    $pass = $_POST['password']; 
+
+    $sql = "SELECT * FROM admin WHERE adminLogin=?";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -19,16 +118,16 @@ if (isset($_POST['login-submit'])) {
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         if ($row = mysqli_fetch_assoc($result)) {
-            if ($pass == $row['userPass']) {
+            if ($pass == $row['adminPass']) {
                 session_start();
-                $_SESSION['activeLogin'] = $row['userLogin'];
-                $_SESSION['activeID'] = $row['userID'];
+                $_SESSION['activeLogin'] = $row['adminLogin'];
+                $_SESSION['activeID'] = $row['adminID'];
 
-                header("Location: ../index.php?login=successful");
+                header("Location: ../admin/adminpanel.php?login=successful");
                 exit();
                 
             }
-            else if($pass != $row['userPass'])
+            else if($pass != $row['adminPass'])
             {
                 header("Location: ../index.php?error=wrongpass");
                 exit();
@@ -36,12 +135,13 @@ if (isset($_POST['login-submit'])) {
 
         }
         else {
-            header("Location: ../index.php?error=usernotfound");
+            header("Location: ../index.php?error=adminnotfound");
             exit();
         }
 
     
     }
+
 
 
 }
