@@ -37,9 +37,19 @@ session_start();
                 </ul>
 
                 <?php
-                    if(isset($_SESSION['activeLogin'])){
+                    if(isset($_SESSION['activePlayerLogin'])){
                         echo '<form class="form-inline my-2 my-lg-0" action="/includes/logoutlogic.php" method="post">
-                            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
+                            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout Player</button>
+                        </form>';
+                    }
+                    else if(isset($_SESSION['activeCoachLogin'])){
+                        echo '<form class="form-inline my-2 my-lg-0" action="/includes/logoutlogic.php" method="post">
+                            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout Coach</button>
+                        </form>';
+                    }
+                    else if(isset($_SESSION['activeAdminLogin'])){
+                        echo '<form class="form-inline my-2 my-lg-0" action="/includes/logoutlogic.php" method="post">
+                            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout Admin</button>
                         </form>';
                     }
                     //add text indicating that there's no login
