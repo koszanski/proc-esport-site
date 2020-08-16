@@ -52,7 +52,9 @@ session_start();
                             <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout Admin</button>
                         </form>';
                     }
-                    //add text indicating that there's no login
+                    else{
+                        echo '<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Not Logged in!</button>';
+                    }
                 ?>
 
 
