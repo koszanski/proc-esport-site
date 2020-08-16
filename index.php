@@ -28,6 +28,22 @@
 				}
 			}
 
+			if (isset($_SESSION['activePlayerLogin']))
+			{
+				header("Location: ../player/playerlanding.php?playerlogin=successful");
+				exit();
+			}
+
+			else if (isset($_SESSION['activeCoachLogin']))
+			{
+				header("Location: ../coach/coachlanding.php?coachlogin=successful");
+                exit();
+			}
+			else if (isset($_SESSION['activeAdminLogin']))
+			{
+				header("Location: ../admin/adminpanel.php?adminlogin=successful");
+                exit();
+			}
 
 		?>
 		<form class="login-form" action="includes/loginlogic.php" method="post">
