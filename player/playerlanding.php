@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-		<?php include ("includes/includes.php"); ?>
+		<?php include ("../includes/includes.php"); ?>
 	</head>
 
 
