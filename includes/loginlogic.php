@@ -21,11 +21,11 @@ if (isset($_POST['player-login-submit'])) {
         if ($row = mysqli_fetch_assoc($result)) {
             if ($pass == $row['userPass']) {
                 session_start();
-                $_SESSION['activeLogin'] = $row['userLogin'];
-                $_SESSION['activeID'] = $row['userID'];
-                $_SESSION['activeFullname'] = $row['userName'];
-                $_SESSION['activeTeam'] = $row['teamID']; 
-                header("Location: ../player/playerlanding.php?login=successful");
+                $_SESSION['activePlayerLogin'] = $row['userLogin'];
+                $_SESSION['activePlayerID'] = $row['userID'];
+                $_SESSION['activePlayerFullname'] = $row['userName'];
+                $_SESSION['activePlayerTeam'] = $row['teamID']; 
+                header("Location: ../player/playerlanding.php?playerlogin=successful");
                 exit();
                 }              
             }
@@ -69,11 +69,11 @@ else if (isset($_POST['coach-login-submit'])){
         if ($row = mysqli_fetch_assoc($result)) {
             if ($pass == $row['userPass']) {
                 session_start();
-                $_SESSION['activeLogin'] = $row['userLogin'];
-                $_SESSION['activeID'] = $row['userID'];
-                $_SESSION['activeFullname'] = $row['userName'];
-                $_SESSION['activeTeam'] = $row['teamID']; 
-                header("Location: ../coach/coachlanding.php?login=successful");
+                $_SESSION['activeCoachLogin'] = $row['userLogin'];
+                $_SESSION['activeCoachID'] = $row['userID'];
+                $_SESSION['activeCoachFullname'] = $row['userName'];
+                $_SESSION['activeCoachTeam'] = $row['teamID']; 
+                header("Location: ../coach/coachlanding.php?coachlogin=successful");
                 exit();
 
                 }              
@@ -120,10 +120,10 @@ else if (isset($_POST['admin-login-submit'])){
         if ($row = mysqli_fetch_assoc($result)) {
             if ($pass == $row['adminPass']) {
                 session_start();
-                $_SESSION['activeLogin'] = $row['adminLogin'];
-                $_SESSION['activeID'] = $row['adminID'];
+                $_SESSION['activeAdminLogin'] = $row['adminLogin'];
+                $_SESSION['activeAdminID'] = $row['adminID'];
 
-                header("Location: ../admin/adminpanel.php?login=successful");
+                header("Location: ../admin/adminpanel.php?adminlogin=successful");
                 exit();
                 
             }
