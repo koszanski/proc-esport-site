@@ -9,7 +9,7 @@ session_start();
 <html>
 
     <head>
-      <?php include ("includes/includes.php"); ?>
+      
     </head>
 
     <body>
@@ -38,11 +38,11 @@ session_start();
 
                 <?php
                     if(isset($_SESSION['activeLogin'])){
-                        echo '<form class="form-inline my-2 my-lg-0" action="includes/logoutlogic.php" method="post">
+                        echo '<form class="form-inline my-2 my-lg-0" action="/includes/logoutlogic.php" method="post">
                             <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
                         </form>';
                     }
-                        
+                    //add text indicating that there's no login
                 ?>
 
 
