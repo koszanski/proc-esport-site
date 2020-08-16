@@ -6,11 +6,14 @@
 	</head>
 
 
-<body>
-
-
-
-</body>
+	<body>
+		<?php
+			if($_GET['login'] == "successful")
+			{
+			echo '<div class="alert alert-success" role="alert"> Login successful! </div>';
+			}
+		?>
+	</body>
 
 
 
