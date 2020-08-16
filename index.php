@@ -23,16 +23,14 @@
 				else if($_GET['error'] == "usernotfound"){
 					echo '<div class="alert alert-danger" role="alert"> Username not found! </div>';
 				}
+				else if($_GET['error'] == "adminnotfound"){
+					echo '<div class="alert alert-danger" role="alert"> Administrator username not found! </div>';
+				}
+				else if ($_GET['error'] == "unassigned"){
+					echo '<div class="alert alert-danger" role="alert"> Credentials match, but not assigned to team, contact database admin. </div>';
+				}
 			}
 
-
-			if (isset($_SESSION['activeLogin'])) {
-				echo '<div class="alert alert-success" role="alert"> You are logged in! </div>';
-			}
-			else {
-				echo '<div class="alert alert-danger" role="alert"> You are logged out! </div>';
-			}
-			
 
 		?>
 		<form class="login-form" action="includes/loginlogic.php" method="post">
