@@ -40,8 +40,8 @@
 			<input type="text" class="form-control" name="username" placeholder="Username" required="">
 			<input type="password" class="form-control" name="password" placeholder="Password" required="">
 
-			<a href="adminlogin.php">Admin Login</a>
 			<button type="submit" class="btn btn-lg btn-primary btn-block" name="login-submit">Login</button>
+			<button type="submit" class="btn btn-lg btn-danger btn-block" name="adminlogin-submit">Admin Login</button>
 			</div>
 		</form>
 
