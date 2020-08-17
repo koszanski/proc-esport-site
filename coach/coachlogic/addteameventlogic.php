@@ -3,8 +3,8 @@ if (isset($_POST['coach-eventt-submit'])) {
 
     require 'includes/dbconfig.php';
 
-    $eventstart = $_POST[''];
-    $eventend = $_POST[''];
+    $eventstart = $_POST['startDate'];
+    $eventend = $_POST['endDate'];
     $eventteam = $_SESSION['activeCoachTeam'];
     $eventissuer = $_SESSION['activeCoachID'];
 

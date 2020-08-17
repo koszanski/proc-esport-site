@@ -3,9 +3,9 @@ if (isset($_POST['coach-eventi-submit'])) {
 
     require 'includes/dbconfig.php';
 
-    $eventstart = $_POST[''];
-    $eventend = $_POST[''];
-    $eventplayer = $_POST[''];
+    $eventstart = $_POST['startDate'];
+    $eventend = $_POST['endDate'];
+    $eventplayer = $_POST['selectedPlayer'];
     $eventissuer = $_SESSION['activeCoachID'];
 
     if (empty($eventstart) || empty($eventend) || empty($eventplayer) || empty($eventissuer)) {
