@@ -1,0 +1,1 @@
+<!-- assign a stat type to a gamemode -->
