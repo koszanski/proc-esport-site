@@ -5,7 +5,7 @@ if (isset($_POST['coach-announce-submit'])) {
 
     $announcer = $_SESSION['activeCoachID'];
     $announcetext = $_POST['announceText'];
-    $announceteam = $_SESSION['activeCoachTeam'];
+    $announceteam = $_SESSION['activeCoachTeam']; //emphasises that you can only manage the team you are part of, multiteaming breaks this! it picks the first one it sees
 
     if (empty($announcer) || empty($announcetext) || empty($announceteam)) {
         header("Location: ../coachlanding.php?error=emptyfields");
