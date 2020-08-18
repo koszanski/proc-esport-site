@@ -7,20 +7,21 @@ if (isset($_POST['coach-eventt-submit'])) {
     $eventend = $_POST['endDate'];
     $eventteam = $_SESSION['activeCoachTeam'];
     $eventissuer = $_SESSION['activeCoachID'];
+    $eventdesc = $_POST['eventDescription'];
 
-    if (empty($eventstart) || empty($eventend) || empty($eventteam) || empty($eventissuer)) {
+    if (empty($eventstart) || empty($eventend) || empty($eventteam) || empty($eventissuer) || empty($eventdesc)) {
         header("Location: ../coachlanding.php?error=emptyfields");
         exit();
     }
     else {
-            $sql = "INSERT INTO event_team (eventStart, eventEnd, eventIssuerID, eventTeamID) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO event_team (eventStart, eventEnd, eventIssuerID, eventTeamID, eventDesc) VALUES (?, ?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             if (!mysqli_stmt_repare($stmt, $sql)) {
                 header("Location: ../coachlanding.php?error=sqlerror");
                 exit();
             }
             else {
-                mysqli_stmt_bind_param($stmt, "ssss", $eventstart, $eventend, $eventteam, $eventissuer);
+                mysqli_stmt_bind_param($stmt, "ssss", $eventstart, $eventend, $eventteam, $eventissuer, $eventdesc);
                 mysqli_stmt_execute($stmt);
                 header("Location: ../coachlanding.php?addevent=complete");
                 exit();
