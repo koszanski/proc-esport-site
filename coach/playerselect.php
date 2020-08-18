@@ -1,0 +1,1 @@
+<!--pulls database of players, places into a form. selected user has all variables pulled then posted-->
