@@ -7,7 +7,7 @@
             }
             else {
                 require '../includes/dbconfig.php';
-                $sql = "SELECT * FROM objective ORDER BY objectiveID DESC";
+                $sql = "SELECT * FROM gaming_session ORDER BY gameSessionID DESC";
                 $result = mysqli_query($conn, $sql);
             }
         
@@ -23,18 +23,17 @@
 	<body>
     <div class="container">
 
-        <h3 align="center"> All Objectives </h3>
+        <h3 align="center"> All Sessions </h3>
         
         <div class="table-responsive">
-            <table id="objectives_data" class="table table-striped table-bordered">
+            <table id="gamingsession_data" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <td>ID</td>
-                        <td>Goal</td>
-                        <td>Stat Type ID</td>
-                        <td>Deadline</td>
-                        <td>Assigned Player ID</td>
-                        <td>Status</td>
+                        <td>Session Start</td>
+                        <td>Session End</td>
+                        <td>Player Remarks</td>
+                        <td>Player ID</td>
                     </tr>
                 </thead>
                 <?php
@@ -42,23 +41,17 @@
                 {
                     echo '
                     <tr>
-                        <td>'.$row["objectiveID"].'</td>
-                        <td>'.$row["objectiveGoal"].'</td>
-                        <td>'.$row["objectiveStatTypeID"].'</td>
-                        <td>'.$row["objectiveDeadline"].'</td>
-                        <td>'.$row["objectivePlayerID"].'</td>
-                        <td>'.$row["objectiveStatus"].'</td>
+                        <td>'.$row["gamingSessionID"].'</td>
+                        <td>'.$row["gamingSessionStart"].'</td>
+                        <td>'.$row["gamingSessionEnd"].'</td>
+                        <td>'.$row["gamingSessionPlayerComments"].'</td>
+                        <td>'.$row["gamingSessionPlayerID"].'</td>
                     </tr> 
                     ';
                 }
                 ?>
             </table>
-
-
-
     </div>
-		
-
 
 	</body>
 
@@ -66,6 +59,6 @@
 
 <script> 
 $(document).ready(function(){
-    $('#objectives_data').DataTable();
+    $('#gamingsession_data').DataTable();
 });
 </script>

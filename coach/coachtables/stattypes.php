@@ -7,7 +7,7 @@
             }
             else {
                 require '../includes/dbconfig.php';
-                $sql = "SELECT * FROM objective ORDER BY objectiveID DESC";
+                $sql = "SELECT * FROM stattype ORDER BY stattypeID DESC";
                 $result = mysqli_query($conn, $sql);
             }
         
@@ -23,18 +23,15 @@
 	<body>
     <div class="container">
 
-        <h3 align="center"> All Objectives </h3>
+        <h3 align="center"> All Stattypes </h3>
         
         <div class="table-responsive">
-            <table id="objectives_data" class="table table-striped table-bordered">
+            <table id="stattype_data" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <td>ID</td>
-                        <td>Goal</td>
-                        <td>Stat Type ID</td>
-                        <td>Deadline</td>
-                        <td>Assigned Player ID</td>
-                        <td>Status</td>
+                        <td>Stat Name</td>
+                        <td>Description</td>
                     </tr>
                 </thead>
                 <?php
@@ -42,23 +39,15 @@
                 {
                     echo '
                     <tr>
-                        <td>'.$row["objectiveID"].'</td>
-                        <td>'.$row["objectiveGoal"].'</td>
-                        <td>'.$row["objectiveStatTypeID"].'</td>
-                        <td>'.$row["objectiveDeadline"].'</td>
-                        <td>'.$row["objectivePlayerID"].'</td>
-                        <td>'.$row["objectiveStatus"].'</td>
+                        <td>'.$row["stattypeID"].'</td>
+                        <td>'.$row["statName"].'</td>
+                        <td>'.$row["statDesc"].'</td>
                     </tr> 
                     ';
                 }
                 ?>
             </table>
-
-
-
     </div>
-		
-
 
 	</body>
 
@@ -66,6 +55,6 @@
 
 <script> 
 $(document).ready(function(){
-    $('#objectives_data').DataTable();
+    $('#stattype_data').DataTable();
 });
 </script>

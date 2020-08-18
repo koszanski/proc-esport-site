@@ -7,7 +7,7 @@
             }
             else {
                 require '../includes/dbconfig.php';
-                $sql = "SELECT * FROM objective ORDER BY objectiveID DESC";
+                $sql = "SELECT * FROM game_mode ORDER BY gamemodeID DESC";
                 $result = mysqli_query($conn, $sql);
             }
         
@@ -23,18 +23,15 @@
 	<body>
     <div class="container">
 
-        <h3 align="center"> All Objectives </h3>
+        <h3 align="center"> All Gamemodes </h3>
         
         <div class="table-responsive">
-            <table id="objectives_data" class="table table-striped table-bordered">
+            <table id="gamemodes_data" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <td>ID</td>
-                        <td>Goal</td>
-                        <td>Stat Type ID</td>
-                        <td>Deadline</td>
-                        <td>Assigned Player ID</td>
-                        <td>Status</td>
+                        <td>Game ID</td>
+                        <td>Gamemode Name</td>
                     </tr>
                 </thead>
                 <?php
@@ -42,12 +39,9 @@
                 {
                     echo '
                     <tr>
-                        <td>'.$row["objectiveID"].'</td>
-                        <td>'.$row["objectiveGoal"].'</td>
-                        <td>'.$row["objectiveStatTypeID"].'</td>
-                        <td>'.$row["objectiveDeadline"].'</td>
-                        <td>'.$row["objectivePlayerID"].'</td>
-                        <td>'.$row["objectiveStatus"].'</td>
+                        <td>'.$row["gamemodeID"].'</td>
+                        <td>'.$row["gameID"].'</td>
+                        <td>'.$row["gamemodeName"].'</td>
                     </tr> 
                     ';
                 }
@@ -66,6 +60,6 @@
 
 <script> 
 $(document).ready(function(){
-    $('#objectives_data').DataTable();
+    $('#gamemodes_data').DataTable();
 });
 </script>

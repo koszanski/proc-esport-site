@@ -7,7 +7,7 @@
             }
             else {
                 require '../includes/dbconfig.php';
-                $sql = "SELECT * FROM objective ORDER BY objectiveID DESC";
+                $sql = "SELECT * FROM statistic ORDER BY statID DESC";
                 $result = mysqli_query($conn, $sql);
             }
         
@@ -23,18 +23,16 @@
 	<body>
     <div class="container">
 
-        <h3 align="center"> All Objectives </h3>
+        <h3 align="center"> All Stats </h3>
         
         <div class="table-responsive">
-            <table id="objectives_data" class="table table-striped table-bordered">
+            <table id="stat_data" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <td>ID</td>
-                        <td>Goal</td>
-                        <td>Stat Type ID</td>
-                        <td>Deadline</td>
-                        <td>Assigned Player ID</td>
-                        <td>Status</td>
+                        <td>Stat Session</td>
+                        <td>Stat Type</td>
+                        <td>Stat Value</td>
                     </tr>
                 </thead>
                 <?php
@@ -42,23 +40,16 @@
                 {
                     echo '
                     <tr>
-                        <td>'.$row["objectiveID"].'</td>
-                        <td>'.$row["objectiveGoal"].'</td>
-                        <td>'.$row["objectiveStatTypeID"].'</td>
-                        <td>'.$row["objectiveDeadline"].'</td>
-                        <td>'.$row["objectivePlayerID"].'</td>
-                        <td>'.$row["objectiveStatus"].'</td>
+                        <td>'.$row["statID"].'</td>
+                        <td>'.$row["statSessionID"].'</td>
+                        <td>'.$row["statTypeID"].'</td>
+                        <td>'.$row["statValue"].'</td>
                     </tr> 
                     ';
                 }
                 ?>
             </table>
-
-
-
     </div>
-		
-
 
 	</body>
 
@@ -66,6 +57,6 @@
 
 <script> 
 $(document).ready(function(){
-    $('#objectives_data').DataTable();
+    $('#stat_data').DataTable();
 });
 </script>
