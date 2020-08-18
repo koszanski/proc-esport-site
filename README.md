@@ -1,4 +1,4 @@
-# proc-esport-site
+# talentulli website
 # Student number: 10585631
 
 The website for the PROC project, working title "talentulli", as supervised by Marco Palomino.
