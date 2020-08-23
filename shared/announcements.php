@@ -1,7 +1,7 @@
 <?php
     require "../includes/header.php";
 
-			if (!isset($_SESSION['activePlayerLogin'])) {
+			if (!isset($_SESSION['activePlayerLogin']) && !isset($_SESSION['activeCoachLogin'])) {
 				header("Location: ../index.php");
     			exit();
             }
