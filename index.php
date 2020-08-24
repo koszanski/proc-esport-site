@@ -15,7 +15,7 @@
 
 			if (isset($_GET['error'])) {
 				if($_GET['error'] == "sqlerror"){
-					echo '<div class="alert alert-danger" role="alert"> SQL error has occured! </div>';
+					echo '<div class="alert alert-danger" role="alert"> SQL error has occured! Contact administrator! </div>';
 				}
 				else if($_GET['error'] == "wrongpass"){
 					echo '<div class="alert alert-danger" role="alert"> Password mismatch, try again! </div>';
