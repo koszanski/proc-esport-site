@@ -17,6 +17,7 @@
 				header("Location: ../index.php");
     			exit();
 			}
+			echo '<div class="alert alert-success" role="danger"> Warning: the only implemented and functional database add query is to issue announcements.</div>';
 		?>
 
 
