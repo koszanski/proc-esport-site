@@ -13,11 +13,25 @@
 	<body>
 
 		<?php
+			if($_GET['error'] == "sqlerror"){
+				echo '<div class="alert alert-success" role="danger"> SQL Error! Contact administrator. </div>';
+			}
+			if($_GET['addannounce'] == "complete"){
+				echo '<div class="alert alert-success" role="alert"> Announcement issued! </div>';
+			}
+			if($_GET['addevent'] == "complete"){
+				echo '<div class="alert alert-success" role="alert"> Event added! </div>';
+			}
+			if($_GET['addobjective'] == "complete"){
+				echo '<div class="alert alert-success" role="alert"> Objective set for player! </div>';
+			}
+
 			if($_GET['coachlogin'] == "successful")
 			{
 			echo '<div class="alert alert-success" role="alert"> Coach login successful! </div>';
+			echo '<div class="alert alert-success" role="danger"> Warning: Some functionality is not implemented, notably calendar and graphing, along with most database operations. See Data edit page for more detail.</div>';
 			}
-
+			
 			if (!isset($_SESSION['activeCoachLogin'])) {
 				header("Location: ../index.php");
     			exit();
