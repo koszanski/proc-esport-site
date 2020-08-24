@@ -60,7 +60,7 @@ CREATE TABLE `announcements` (
   KEY `annoCoachLink_idx` (`announcementIssuerID`),
   CONSTRAINT `annoCoachLink` FOREIGN KEY (`announcementIssuerID`) REFERENCES `team_coaches` (`teamCoachID`) ON DELETE CASCADE,
   CONSTRAINT `annoTeamLink` FOREIGN KEY (`announcementTeamID`) REFERENCES `team` (`teamID`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `announcements` (
 
 LOCK TABLES `announcements` WRITE;
 /*!40000 ALTER TABLE `announcements` DISABLE KEYS */;
-INSERT INTO `announcements` VALUES (1,6,'All players, welcome aboard! Effective today, all players must use face coverings to enter our training facility.',1);
+INSERT INTO `announcements` VALUES (1,6,'All players, welcome aboard! Effective today, all players must use face coverings to enter our training facility.',1),(2,6,'loreum ipsum',1),(3,6,'loooreummm ippsummm',1);
 /*!40000 ALTER TABLE `announcements` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,7 +256,7 @@ CREATE TABLE `objective` (
   `objectiveID` int(11) NOT NULL AUTO_INCREMENT,
   `objectiveGoal` varchar(45) NOT NULL,
   `objectiveStatTypeID` int(11) NOT NULL,
-  `objectiveDeadline` date NOT NULL,
+  `objectiveDeadline` date DEFAULT NULL,
   `objectivePlayerID` int(11) NOT NULL,
   `objectiveStatus` varchar(20) NOT NULL,
   PRIMARY KEY (`objectiveID`),
@@ -538,4 +538,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-18  1:41:19
+-- Dump completed on 2020-08-24 18:06:49
