@@ -6,7 +6,7 @@ if (isset($_POST['player-login-submit'])) {
     $user = $_POST['username'];
     $pass = $_POST['password']; 
 
-    $sql = "SELECT user.userID, user.userLogin, user.userPass, user.userName, team_players.teamID, team.teamGameID FROM user INNER JOIN team_players ON user.userID=team_players.teamPlayerID INNER JOIN team ON team_players.teamID=team.teamID WHERE userLogin=?";
+    $sql = "SELECT user.userID, user.userLogin, user.userPass, user.userName, team_players.teamID, team.teamGameID, team.teamName, game.gameTitle FROM user INNER JOIN team_players ON user.userID=team_players.teamPlayerID INNER JOIN team ON team_players.teamID=team.teamID INNER JOIN game ON team.teamGameID=game.GameID WHERE userLogin=?";
     //inner join join onto player table
     $stmt = mysqli_stmt_init($conn);
 
@@ -26,6 +26,8 @@ if (isset($_POST['player-login-submit'])) {
                 $_SESSION['activePlayerFullname'] = $row['userName'];
                 $_SESSION['activePlayerTeam'] = $row['teamID']; 
                 $_SESSION['activePlayerGame'] = $row['teamGameID'];
+                $_SESSION['activePlayerTeamName'] = $row['teamName'];
+                $_SESSION['activePlayerGameName'] = $row['gameTitle'];
                 header("Location: ../player/playerlanding.php?playerlogin=successful");
                 exit();
                 }              
@@ -55,7 +57,7 @@ else if (isset($_POST['coach-login-submit'])){
     $user = $_POST['username'];
     $pass = $_POST['password']; 
 
-    $sql = "SELECT user.userID, user.userLogin, user.userPass, user.userName, team_coaches.teamID FROM user INNER JOIN team_coaches ON user.userID=team_coaches.teamCoachID INNER JOIN team ON team_coaches.teamID=team.teamID WHERE userLogin=?";
+    $sql = "SELECT user.userID, user.userLogin, user.userPass, user.userName, team_coaches.teamID FROM user INNER JOIN team_coaches ON user.userID=team_coaches.teamCoachID INNER JOIN team ON team_coaches.teamID=team.teamID INNER JOIN game ON team.teamGameID=game.GameID WHERE userLogin=?";
     //inner join onto coach table
     $stmt = mysqli_stmt_init($conn);
 
