@@ -15,6 +15,7 @@
 			if($_GET['adminlogin'] == "successful")
 			{
 			echo '<div class="alert alert-success" role="alert"> Admin login successful! </div>';
+			echo '<div class="alert alert-success" role="danger"> Warning: the admin panel is mostly incomplete. Placeholder pages and login functionality have been left in, however due to time constraints nearly nothing was implemented, as admins have database access anyway via MySQL Workbench. </div>';
 			}
 
 			if (!isset($_SESSION['activeAdminLogin'])) {
