@@ -16,6 +16,7 @@
 			if($_GET['playerlogin'] == "successful")
 			{
 			echo '<div class="alert alert-success" role="alert"> Player login successful! </div>';
+			echo '<div class="alert alert-success" role="danger"> Note: graph and calendar functionality is not implemented.</div>';
 			}
 
 			if (!isset($_SESSION['activePlayerLogin'])) {
