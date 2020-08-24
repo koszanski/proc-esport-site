@@ -24,7 +24,6 @@
     			exit();
 			}
 		?>
-<!--view player, view objectives, view announcements, maybe view calendar, maybe view stat graph or implement into player page-->
 
 		<div class="row">
 		  <div class="col-xs-1-12">
@@ -51,6 +50,15 @@
   					<h5 class="card-title">Announcements</h5>
     				<p class="card-text">View important issued announcements by your organisation.</p>
     				<a href="../shared/announcements.php" class="btn btn-primary">Go</a>
+  				</div>
+			</div>
+		  </div>
+		  <div class="col-xs-1-12">
+		  	<div class="card" style="width: 18rem;">
+  				<div class="card-body">
+  					<h5 class="card-title">Calendar</h5>
+    				<p class="card-text">View a calendar with scheduled events.</p>
+    				<a href="../shared/calendar.php" class="btn btn-primary">Go</a>
   				</div>
 			</div>
 		  </div>
