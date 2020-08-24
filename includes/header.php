@@ -12,7 +12,7 @@ session_start();
 
     <body>
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../../index.php">
             <img src="/images/logo.png" width="70" height="70" class="d-inline-block align-top" alt=""> Talentulli
             </a>
                 <?php
