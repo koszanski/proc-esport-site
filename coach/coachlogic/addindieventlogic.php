@@ -20,7 +20,7 @@ if (isset($_POST['coach-eventi-submit'])) {
     else {
         mysqli_stmt_bind_param($stmt, "sssss", $eventstart, $eventend, $eventplayer, $eventissuer, $eventdesc);
         mysqli_stmt_execute($stmt);
-        header("Location: ../coachlanding.php?addevent=complete");
+        header("Location: ../coachlanding.php?completeop=addevent");
         exit();
     }
 

@@ -20,7 +20,7 @@ if (isset($_POST['coach-objective-submit'])) {
     else {
         mysqli_stmt_bind_param($stmt, "sssss", $goal, $stattypeid, $deadline, $playerid, $objective);
         mysqli_stmt_execute($stmt);
-        header("Location: ../coachlanding.php?addobjective=complete");
+        header("Location: ../coachlanding.php?completeop=addobjective");
         exit();
     }
 

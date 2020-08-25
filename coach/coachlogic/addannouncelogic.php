@@ -17,7 +17,7 @@ if (isset($_POST['coach-announce-submit'])) {
     else {
         mysqli_stmt_bind_param($stmt, "sss", $announcer, $announcetext, $announceteam);
         mysqli_stmt_execute($stmt);
-        header("Location: ../coachlanding.php?addannounce=complete");
+        header("Location: ../coachlanding.php?completeop=addannounce");
         exit();
     }
 
