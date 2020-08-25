@@ -28,7 +28,7 @@ if (isset($_POST['coach-eventt-submit'])) {
     mysqli_close($conn);
 }
 else {
-    header("Location: ../index.php");
+    header("Location: ../../index.php");
     exit();
 
 }

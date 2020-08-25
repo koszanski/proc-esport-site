@@ -1,12 +1,12 @@
 <?php
-    require "../includes/header.php";
+    require "../../includes/header.php";
 
 			if (!isset($_SESSION['activeCoachLogin'])) {
 				header("Location: ../index.php");
     			exit();
             }
             else {
-                require '../includes/dbconfig.php';
+                require '../../includes/dbconfig.php';
                 $sql = "SELECT * FROM game_mode ORDER BY gamemodeID DESC";
                 $result = mysqli_query($conn, $sql);
             }
@@ -17,7 +17,7 @@
 <html>
 <!-- "datatable" styled page-->
 	<head>
-		<?php include ("../includes/includes.php"); ?>
+		<?php include ("../../includes/includes.php"); ?>
 	</head>
 
 	<body>
