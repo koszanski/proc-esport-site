@@ -6,8 +6,9 @@
     			exit();
             }
             else {
+                //query is designed to only show objectives for players that are belonging to the same team as the coach.
                 require '../includes/dbconfig.php';
-                $sql = "SELECT * FROM objective ORDER BY objectiveID DESC";
+                $sql = "SELECT * FROM objective INNER JOIN team_players ON objective.playerID=team_players.teamPlayerID INNER JOIN team_coaches ON team_players.teamID=team_coaches.teamID ORDER BY objectiveID DESC";
                 $result = mysqli_query($conn, $sql);
             }
         
@@ -15,7 +16,7 @@
 
 <!DOCTYPE html>
 <html>
-
+<!-- "datatable" styled page-->
 	<head>
 		<?php include ("../includes/includes.php"); ?>
 	</head>
