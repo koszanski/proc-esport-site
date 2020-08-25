@@ -7,7 +7,7 @@
             }
             else {
                 require '../../includes/dbconfig.php';
-                $sql = "SELECT * FROM gaming_session ORDER BY gameSessionID DESC";
+                $sql = "SELECT * FROM gaming_session ORDER BY gamingSessionID DESC";
                 $result = mysqli_query($conn, $sql);
             }
         
