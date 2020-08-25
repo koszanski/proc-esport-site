@@ -1,14 +1,14 @@
 <?php
-    require "../includes/header.php";
+    require "../../includes/header.php";
 
 			if (!isset($_SESSION['activeCoachLogin'])) {
-				header("Location: ../index.php");
+				header("Location: ../../index.php");
     			exit();
             }
             else {
                 //query is designed to only show objectives for players that are belonging to the same team as the coach.
-                require '../includes/dbconfig.php';
-                $sql = "SELECT * FROM objective INNER JOIN team_players ON objective.playerID=team_players.teamPlayerID INNER JOIN team_coaches ON team_players.teamID=team_coaches.teamID ORDER BY objectiveID DESC";
+                require '../../includes/dbconfig.php';
+                $sql = "SELECT * FROM objective INNER JOIN team_players ON objective.objectivePlayerID=team_players.teamPlayerID INNER JOIN team_coaches ON team_players.teamID=team_coaches.teamID ORDER BY objectiveID DESC";
                 $result = mysqli_query($conn, $sql);
             }
         
@@ -18,7 +18,7 @@
 <html>
 <!-- "datatable" styled page-->
 	<head>
-		<?php include ("../includes/includes.php"); ?>
+		<?php include ("../../includes/includes.php"); ?>
 	</head>
 
 	<body>
