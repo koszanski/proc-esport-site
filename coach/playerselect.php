@@ -11,7 +11,7 @@ to view specific statistics and details specific to the player, as the player pa
     else {
         require '../includes/dbconfig.php';
         //statement that pulls all login-names, using an INNER JOIN on teamplayers to only grab players, as opposed to coaches (who are also users)
-        $sql = "SELECT userLogin FROM user INNER JOIN team_players ON user.userID=team_players.teamPlayerID ORDER BY userID DESC ";
+        $sql = "SELECT userLogin FROM user INNER JOIN team_players ON user.userID=team_players.teamPlayerID ORDER BY userID ASC ";
         $result = mysqli_query($conn, $sql);
     }
 ?>
