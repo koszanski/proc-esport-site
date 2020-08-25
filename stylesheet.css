@@ -1,3 +1,6 @@
+/* limited styling is used throughout the website, however a stylesheet is present and is included in the includes.php file, 
+meaning you can adjust this and it should be appended globally */
+
 body {
     background: grey
 }

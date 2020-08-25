@@ -1,1 +1,1 @@
-<!-- assign a stat type to a gamemode -->
+<!-- no logic, incomplete -->

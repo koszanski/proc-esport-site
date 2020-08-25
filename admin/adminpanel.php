@@ -8,7 +8,7 @@
 	<head>
 		<?php include ("../includes/includes.php"); ?>
 	</head>
-
+<!--this is the landing page for the administrator, the admin panel. while logging in and viewing this page is complete, you can do none of the actual operations.-->
 
 	<body>
 		<?php

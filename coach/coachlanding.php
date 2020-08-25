@@ -9,7 +9,8 @@
 		<?php include ("../includes/includes.php"); ?>
 	</head>
 
-
+<!--refer to player landing, this is functionally identical to that page but with different feedback, showing alerts denoting success when an operation
+for manipulating the database is successful.-->
 	<body>
 
 		<?php

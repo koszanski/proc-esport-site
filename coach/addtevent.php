@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-
+<!--addition form to have been used to add team events, which are accessible to all players part of a team-->
 	<head>
 		<?php include ("../includes/includes.php"); ?>
 	</head>

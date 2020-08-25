@@ -1,4 +1,4 @@
-<!-- see all of the objectives tied with the currently logged in player-->
+<!-- a datatable page that shows a player's outstanding objectives/targets-->
 <?php
     require "../includes/header.php";
 
@@ -8,6 +8,7 @@
             }
             else {
                 require '../includes/dbconfig.php';
+                //the active player session var is used within the query to look up objectives only for the logged in player
                 $sql = "SELECT * FROM objective WHERE objectivePlayerID=" . $_SESSION['activePlayerID'] . " ORDER BY objectiveID DESC";
                 $result = mysqli_query($conn, $sql);
             }

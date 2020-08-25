@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-
+<!-- page with all "datatable" type pages (used for viewing various database info) links in card form, same as previous landing pages-->
 	<head>
 		<?php include ("../includes/includes.php"); ?>
 	</head>

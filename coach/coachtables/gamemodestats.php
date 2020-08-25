@@ -15,7 +15,7 @@
 
 <!DOCTYPE html>
 <html>
-
+<!-- "datatable" styled page-->
 	<head>
 		<?php include ("../includes/includes.php"); ?>
 	</head>

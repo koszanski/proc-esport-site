@@ -8,7 +8,7 @@
 	<head>
 		<?php include ("../includes/includes.php"); ?>
 	</head>
-
+<!--this form is a nested form for deletion related database manipulations.-->
 
 	<body>
 		<?php

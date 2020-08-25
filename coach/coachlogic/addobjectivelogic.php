@@ -1,4 +1,5 @@
 <?php 
+//as the form was never implemented, this logic was never tested and serves as an approximate placeholder.
 if (isset($_POST['coach-objective-submit'])) {
 
     require '../../includes/dbconfig.php';

@@ -1,4 +1,5 @@
 <?php
+	//include for navbar
 	require "../includes/header.php";
 ?>
 
@@ -13,6 +14,8 @@
 	<body>
 
 		<?php
+		//get method that was submitted by a successful login gives feedback of a successful login
+		//also gives warning that not everything is implemented
 			if($_GET['playerlogin'] == "successful")
 			{
 			echo '<div class="alert alert-success" role="alert"> Player login successful! </div>';
@@ -24,7 +27,7 @@
     			exit();
 			}
 		?>
-
+		<!--using bootstrap 4's cards and grid, this is the main UI of the landing page that has links to useable pages.--->
 		<div class="row">
 		  <div class="col-xs-1-12">
 			<div class="card" style="width: 18rem;">

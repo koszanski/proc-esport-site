@@ -1,4 +1,5 @@
-<!--pulls database of players, places into a dropdown form. selected user has all variables pulled then posted-->
+<!--form used for coaches to select a specific user in a database and view basic stats about the user. this would be primarily used
+to view specific statistics and details specific to the player, as the player page would have a graph.-->
 
 <?php
     require "../includes/header.php";
@@ -9,6 +10,7 @@
     }
     else {
         require '../includes/dbconfig.php';
+        //statement that pulls all login-names, using an INNER JOIN on teamplayers to only grab players, as opposed to coaches (who are also users)
         $sql = "SELECT userLogin FROM user INNER JOIN team_players ON user.userID=team_players.teamPlayerID ORDER BY userID DESC ";
         $result = mysqli_query($conn, $sql);
     }
@@ -28,6 +30,7 @@
             <form class="coach-playerselect-submit" action="../shared/player.php" method="post">
                 <select class="form-control" name="usernames">
                 <?php
+                //while statement to pull all username entries into a selection dropdown
                     while($row = mysqli_fetch_assoc($result)) 
                     {
                     $user_name = $row['userLogin'];

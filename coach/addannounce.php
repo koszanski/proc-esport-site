@@ -8,7 +8,7 @@
 	<head>
 		<?php include ("../includes/includes.php"); ?>
 	</head>
-
+	<!--- a basic form page with a textarea and submit button designed to issue team-scale announcements. --->
 
 	<body>
 

@@ -9,7 +9,7 @@
 		<?php include ("../includes/includes.php"); ?>
 	</head>
 
-
+<!--grid/card based page for database manipulation operation that the coach can do, similar functionality as landing pages.-->
 	<body>
 
 		<?php

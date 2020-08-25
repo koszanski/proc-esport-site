@@ -8,7 +8,7 @@
 	<head>
 		<?php include ("../includes/includes.php"); ?>
 	</head>
-
+<!--this form would be purposed for adding games to the database, but it was not complete.-->
 
 	<body>
 

@@ -8,7 +8,7 @@
 	<head>
 		<?php include ("../includes/includes.php"); ?>
 	</head>
-
+<!--addition form to have been used to issue objectives/targets, events that can be timed to fulfill/exceed a certain statistic in a videogame-->
 
 	<body>
 
