@@ -60,7 +60,7 @@ CREATE TABLE `announcements` (
   KEY `annoCoachLink_idx` (`announcementIssuerID`),
   CONSTRAINT `annoCoachLink` FOREIGN KEY (`announcementIssuerID`) REFERENCES `team_coaches` (`teamCoachID`) ON DELETE CASCADE,
   CONSTRAINT `annoTeamLink` FOREIGN KEY (`announcementTeamID`) REFERENCES `team` (`teamID`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `announcements` (
 
 LOCK TABLES `announcements` WRITE;
 /*!40000 ALTER TABLE `announcements` DISABLE KEYS */;
-INSERT INTO `announcements` VALUES (1,6,'All players, welcome aboard! Effective today, all players must use face coverings to enter our training facility.',1),(2,6,'loreum ipsum',1),(3,6,'loooreummm ippsummm',1);
+INSERT INTO `announcements` VALUES (1,6,'All players, welcome aboard! Effective today, all players must use face coverings to enter our training facility.',1),(2,6,'loreum ipsum',1),(3,6,'loooreummm ippsummm',1),(4,6,'Another announcement.',1);
 /*!40000 ALTER TABLE `announcements` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -224,7 +224,7 @@ DROP TABLE IF EXISTS `gaming_session`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `gaming_session` (
-  `gamingSessionID` int(11) NOT NULL,
+  `gamingSessionID` int(11) NOT NULL AUTO_INCREMENT,
   `gamingSessionStart` datetime NOT NULL,
   `gamingSessionEnd` datetime NOT NULL,
   `gamingsessionPlayerComments` varchar(60) DEFAULT NULL,
@@ -233,7 +233,7 @@ CREATE TABLE `gaming_session` (
   UNIQUE KEY `gamingSessionID_UNIQUE` (`gamingSessionID`),
   KEY `gamePlayerLink_idx` (`gamingsessionPlayerID`),
   CONSTRAINT `gamePlayerLink` FOREIGN KEY (`gamingsessionPlayerID`) REFERENCES `team_players` (`teamPlayerID`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -242,6 +242,7 @@ CREATE TABLE `gaming_session` (
 
 LOCK TABLES `gaming_session` WRITE;
 /*!40000 ALTER TABLE `gaming_session` DISABLE KEYS */;
+INSERT INTO `gaming_session` VALUES (1,'2020-08-26 01:41:20','2020-08-26 01:41:23',NULL,1),(2,'2020-08-26 01:49:19','2020-08-26 01:49:22',NULL,1),(3,'2020-08-26 01:50:03','2020-08-26 01:50:05',NULL,1),(4,'2020-08-26 01:53:46','2020-08-26 01:53:53',NULL,1),(5,'2020-08-26 02:00:57','2020-08-26 02:01:00',NULL,1),(6,'2020-08-26 02:04:12','2020-08-26 02:04:16',NULL,1),(7,'2020-08-26 02:10:00','2020-08-26 02:10:05',NULL,1),(8,'2020-08-26 02:11:15','2020-08-26 02:11:18',NULL,1),(9,'2020-08-26 02:19:49','2020-08-26 02:19:51',NULL,1),(10,'2020-08-26 02:23:26','2020-08-26 02:23:29',NULL,1),(11,'2020-08-26 02:27:54','2020-08-26 02:27:57',NULL,1),(12,'2020-08-26 02:35:46','2020-08-26 02:35:51',NULL,1);
 /*!40000 ALTER TABLE `gaming_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -265,7 +266,7 @@ CREATE TABLE `objective` (
   KEY `objPlayerLink_idx` (`objectivePlayerID`),
   CONSTRAINT `objPlayerLink` FOREIGN KEY (`objectivePlayerID`) REFERENCES `team_players` (`teamPlayerID`) ON DELETE CASCADE,
   CONSTRAINT `objStatLink` FOREIGN KEY (`objectiveStatTypeID`) REFERENCES `game_mode_stats` (`gameStatTypeID`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -274,6 +275,7 @@ CREATE TABLE `objective` (
 
 LOCK TABLES `objective` WRITE;
 /*!40000 ALTER TABLE `objective` DISABLE KEYS */;
+INSERT INTO `objective` VALUES (1,'Acheive 20 frags in a single game.',1,'2020-08-29',1,'Active');
 /*!40000 ALTER TABLE `objective` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -371,7 +373,7 @@ CREATE TABLE `statistic` (
   KEY `statSessionLink_idx` (`statSessionID`),
   CONSTRAINT `statSessionLink` FOREIGN KEY (`statSessionID`) REFERENCES `gaming_session` (`gamingSessionID`),
   CONSTRAINT `statTypeLink` FOREIGN KEY (`statTypeID`) REFERENCES `stattype` (`stattypeID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -380,6 +382,7 @@ CREATE TABLE `statistic` (
 
 LOCK TABLES `statistic` WRITE;
 /*!40000 ALTER TABLE `statistic` DISABLE KEYS */;
+INSERT INTO `statistic` VALUES (1,8,1,1),(2,8,2,1),(3,8,3,1),(4,8,4,1),(5,8,5,1),(6,8,6,1),(7,9,1,1),(8,9,2,1),(9,9,3,1),(10,9,4,1),(11,9,5,1),(12,9,6,1),(13,10,1,1),(14,10,2,1),(15,10,3,1),(16,10,4,1),(17,10,5,1),(18,10,6,1),(19,11,1,1),(20,11,2,1),(21,11,3,1),(22,11,4,1),(23,11,5,1),(24,11,6,1),(25,12,1,12),(26,12,2,1),(27,12,3,3),(28,12,4,4),(29,12,5,3),(30,12,6,1);
 /*!40000 ALTER TABLE `statistic` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -426,7 +429,7 @@ CREATE TABLE `team` (
   UNIQUE KEY `teamID_UNIQUE` (`teamID`),
   KEY `gameID_idx` (`teamGameID`),
   CONSTRAINT `gameteamID` FOREIGN KEY (`teamGameID`) REFERENCES `game` (`gameID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -435,7 +438,7 @@ CREATE TABLE `team` (
 
 LOCK TABLES `team` WRITE;
 /*!40000 ALTER TABLE `team` DISABLE KEYS */;
-INSERT INTO `team` VALUES (1,'A-Team',1);
+INSERT INTO `team` VALUES (1,'A-Team',1),(2,'League Team',2);
 /*!40000 ALTER TABLE `team` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -538,4 +541,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-24 18:06:49
+-- Dump completed on 2020-08-26  2:48:53
