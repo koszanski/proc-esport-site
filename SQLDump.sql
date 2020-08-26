@@ -147,7 +147,7 @@ CREATE TABLE `game` (
   `gameTitle` varchar(45) NOT NULL,
   `gameDesc` text,
   PRIMARY KEY (`gameID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +156,7 @@ CREATE TABLE `game` (
 
 LOCK TABLES `game` WRITE;
 /*!40000 ALTER TABLE `game` DISABLE KEYS */;
-INSERT INTO `game` VALUES (1,'Counter-Strike: Global Offensive',NULL),(2,'League of Legends',NULL);
+INSERT INTO `game` VALUES (1,'Counter-Strike: Global Offensive',NULL),(2,'League of Legends',NULL),(3,'Halo 3',NULL);
 /*!40000 ALTER TABLE `game` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,7 +176,7 @@ CREATE TABLE `game_mode` (
   KEY `gamemodeLink_idx` (`gameID`),
   KEY `gameModeGameLink_idx` (`gameID`),
   CONSTRAINT `gameModeGameLink` FOREIGN KEY (`gameID`) REFERENCES `game` (`gameID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,7 +185,7 @@ CREATE TABLE `game_mode` (
 
 LOCK TABLES `game_mode` WRITE;
 /*!40000 ALTER TABLE `game_mode` DISABLE KEYS */;
-INSERT INTO `game_mode` VALUES (1,1,'Competitive Pickup Game'),(2,1,'Casual Pickup Game');
+INSERT INTO `game_mode` VALUES (1,1,'Competitive Pickup Game'),(2,1,'Casual Pickup Game'),(3,3,'SWAT'),(4,3,'Big Team SWAT'),(5,3,'Capture the Flag');
 /*!40000 ALTER TABLE `game_mode` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,7 +212,7 @@ CREATE TABLE `game_mode_stats` (
 
 LOCK TABLES `game_mode_stats` WRITE;
 /*!40000 ALTER TABLE `game_mode_stats` DISABLE KEYS */;
-INSERT INTO `game_mode_stats` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(2,1),(2,2),(2,3),(2,4),(2,5);
+INSERT INTO `game_mode_stats` VALUES (1,1),(1,2),(1,3),(1,4),(1,5),(1,6),(2,1),(2,2),(2,3),(2,4),(2,5),(3,1),(3,2),(3,7),(3,9),(3,11),(3,12),(3,13),(3,14),(3,15),(3,16),(3,17),(3,18);
 /*!40000 ALTER TABLE `game_mode_stats` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -343,7 +343,7 @@ CREATE TABLE `organization` (
   `orgName` varchar(45) NOT NULL,
   PRIMARY KEY (`orgID`),
   UNIQUE KEY `orgName_UNIQUE` (`orgName`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -352,6 +352,7 @@ CREATE TABLE `organization` (
 
 LOCK TABLES `organization` WRITE;
 /*!40000 ALTER TABLE `organization` DISABLE KEYS */;
+INSERT INTO `organization` VALUES (1,'Viper Clan');
 /*!40000 ALTER TABLE `organization` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -398,9 +399,8 @@ CREATE TABLE `stattype` (
   `statName` varchar(30) NOT NULL,
   `statDesc` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`stattypeID`),
-  UNIQUE KEY `stattypeID_UNIQUE` (`stattypeID`),
-  UNIQUE KEY `statName_UNIQUE` (`statName`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `stattypeID_UNIQUE` (`stattypeID`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -409,7 +409,7 @@ CREATE TABLE `stattype` (
 
 LOCK TABLES `stattype` WRITE;
 /*!40000 ALTER TABLE `stattype` DISABLE KEYS */;
-INSERT INTO `stattype` VALUES (1,'Kill/Frag',NULL),(2,'Death',NULL),(3,'Headshot',NULL),(4,'Bomb Plants',NULL),(5,'Rounds won',NULL),(6,'Game Win? (0/1)',NULL);
+INSERT INTO `stattype` VALUES (1,'Kill/Frag',NULL),(2,'Death',NULL),(3,'Headshot',NULL),(4,'Bomb Plants',NULL),(5,'Rounds won',NULL),(6,'Game Win? (0/1)',NULL),(7,'Score',NULL),(8,'',NULL),(9,'Assist',NULL),(10,'',NULL),(11,'Weapon Kill',NULL),(12,'Grenade Kill',NULL),(13,'Melee Kill',NULL),(14,'Other Kill',NULL),(15,'Avg. Life',NULL),(16,'K/D Spread',NULL),(17,'Spree',NULL),(18,'Medals',NULL);
 /*!40000 ALTER TABLE `stattype` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -429,7 +429,7 @@ CREATE TABLE `team` (
   UNIQUE KEY `teamID_UNIQUE` (`teamID`),
   KEY `gameID_idx` (`teamGameID`),
   CONSTRAINT `gameteamID` FOREIGN KEY (`teamGameID`) REFERENCES `game` (`gameID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -438,7 +438,7 @@ CREATE TABLE `team` (
 
 LOCK TABLES `team` WRITE;
 /*!40000 ALTER TABLE `team` DISABLE KEYS */;
-INSERT INTO `team` VALUES (1,'A-Team',1),(2,'League Team',2);
+INSERT INTO `team` VALUES (1,'A-Team',3),(2,'League Team',2),(3,'Youth Team',3);
 /*!40000 ALTER TABLE `team` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -541,4 +541,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-26  2:48:53
+-- Dump completed on 2020-08-26 14:29:12
