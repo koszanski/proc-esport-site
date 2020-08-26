@@ -44,8 +44,8 @@
                         <td>'.$row["gamingSessionID"].'</td>
                         <td>'.$row["gamingSessionStart"].'</td>
                         <td>'.$row["gamingSessionEnd"].'</td>
-                        <td>'.$row["gamingSessionPlayerComments"].'</td>
-                        <td>'.$row["gamingSessionPlayerID"].'</td>
+                        <td>'.$row["gamingsessionPlayerComments"].'</td>
+                        <td>'.$row["gamingsessionPlayerID"].'</td>
                     </tr> 
                     ';
                 }
