@@ -25,7 +25,7 @@
 			<div class="card" style="width: 18rem;">
   				<div class="card-body">
   					<h5 class="card-title">All Objectives</h5>
-    				<p class="card-text">View all outstanding objectives in the organisation.</p>
+    				<p class="card-text">View all outstanding objectives in your team.</p>
     				<a href="coachtables/allobjectives.php" class="btn btn-primary">Go</a>
   				</div>
 			</div>
@@ -34,7 +34,7 @@
 		  	<div class="card" style="width: 18rem;">
   				<div class="card-body">
   					<h5 class="card-title">Gamemodes</h5>
-    				<p class="card-text">View outstanding gamemodes.</p>
+    				<p class="card-text">View all gamemodes.</p>
     				<a href="coachtables/gamemodes.php" class="btn btn-primary">Go</a>
   				</div>
 			</div>
