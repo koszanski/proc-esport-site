@@ -21,7 +21,7 @@
 
 <!DOCTYPE html>
 <html>
-    <!--- "datatables" powered page to show all team-scale issued announcements in the organisation. --->
+    <!--- "datatables" powered page to show all team-scale issued announcements in the organization. --->
 	<head>
 		<?php include ("../includes/includes.php"); ?>
 	</head>

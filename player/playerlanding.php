@@ -51,7 +51,7 @@
 		  	<div class="card" style="width: 18rem;">
   				<div class="card-body">
   					<h5 class="card-title">Announcements</h5>
-    				<p class="card-text">View important issued announcements by your organisation.</p>
+    				<p class="card-text">View important issued announcements by your organization.</p>
     				<a href="../shared/announcements.php" class="btn btn-primary">Go</a>
   				</div>
 			</div>

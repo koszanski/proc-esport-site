@@ -23,7 +23,7 @@
 			<div class="card" style="width: 18rem;">
   				<div class="card-body">
   					<h5 class="card-title">Delete User</h5>
-    				<p class="card-text">Remove a user from the organisation.</p>
+    				<p class="card-text">Remove a user from the organization.</p>
     				<a href="deluser.php" class="btn btn-primary">Go</a>
   				</div>
 			</div>

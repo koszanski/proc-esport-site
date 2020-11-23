@@ -24,7 +24,7 @@
 			<div class="card" style="width: 18rem;">
   				<div class="card-body">
   					<h5 class="card-title">Add game</h5>
-    				<p class="card-text">Add a new videogame for the organisation.</p>
+    				<p class="card-text">Add a new videogame for the organization.</p>
     				<a href="addgame.php" class="btn btn-primary">Go</a>
   				</div>
 			</div>
@@ -62,7 +62,7 @@
 			<div class="card" style="width: 18rem;">
   				<div class="card-body">
   					<h5 class="card-title">Add a user</h5>
-    				<p class="card-text">Add a user to an organisation.</p>
+    				<p class="card-text">Add a user to an organization.</p>
     				<a href="adduser.php" class="btn btn-primary">Go</a>
   				</div>
 			</div>
@@ -71,7 +71,7 @@
 			<div class="card" style="width: 18rem;">
   				<div class="card-body">
   					<h5 class="card-title">Assign a player</h5>
-    				<p class="card-text">Assign a user to an organisation's team as a player.</p>
+    				<p class="card-text">Assign a user to an organization's team as a player.</p>
     				<a href="assignplayer.php" class="btn btn-primary">Go</a>
   				</div>
 			</div>
@@ -80,7 +80,7 @@
 			<div class="card" style="width: 18rem;">
   				<div class="card-body">
   					<h5 class="card-title">Assign a coach</h5>
-    				<p class="card-text">Assign a user to an organisation's team as a coach.</p>
+    				<p class="card-text">Assign a user to an organization's team as a coach.</p>
     				<a href="assigncoach.php" class="btn btn-primary">Go</a>
   				</div>
 			</div>
